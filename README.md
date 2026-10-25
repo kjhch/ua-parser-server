@@ -70,7 +70,7 @@ docker run -d -p 8080:8080 -e PORT=8080 ua-parser-server
 
 `.github/workflows/docker-publish.yml` 为**手动触发**:仓库 Actions 页 → Build and Push Docker Image → Run workflow。
 
-- 镜像标签取 `package.json` 的 `version`,并同时更新 `latest`
+- 镜像标签取 `package.json` 的 `version`(如 `1.0.0`),不推送 `latest`
 - 发布新版本的流程:修改 `package.json` 的 `version` → 提交 → 手动触发 workflow
 
 镜像构建为 `linux/amd64` + `linux/arm64` 双架构,使用 GitHub Actions 缓存加速。
